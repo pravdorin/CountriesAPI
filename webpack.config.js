@@ -39,16 +39,7 @@ module.exports = (env) => {
         warnings: true,
       },
     },
-    // The point or points to enter the application. This is where Webpack will
-    // start. We generally have one entry point per HTML page. For single-page
-    // applications, this means one entry point. For traditional multi-page apps,
-    // we may have multiple entry points.
-    // https://webpack.js.org/concepts#entry
     entry: [path.join(PATH_SOURCE, './index.jsx')],
-
-    // Tell Webpack where to emit the bundles it creates and how to name them.
-    // https://webpack.js.org/concepts#output
-    // https://webpack.js.org/configuration/output#outputFilename
     output: {
       path: PATH_DIST,
       filename: 'js/[name].[hash].js',
@@ -76,6 +67,7 @@ module.exports = (env) => {
                 ],
                 '@babel/preset-react',
               ],
+              plugins: ['react-css-modules'],
             },
           },
         },
@@ -91,50 +83,38 @@ module.exports = (env) => {
           ],
         },
         {
-          test: /\.module\.s(a|c)ss$/,
-          loader: [
-            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          test: /\.scss$/,
+          use: [
+            { loader: 'style-loader' },
             {
               loader: 'css-loader',
               options: {
-                modules: true,
-                sourceMap: isDevelopment,
+                sourceMap: true,
+                modules: {
+                  localIdentName: '[local]_[hash:base64:5]',
+                },
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
               },
             },
             {
               loader: 'sass-loader',
-              options: {
-                sourceMap: isDevelopment,
-              },
+              options: { sourceMap: true },
             },
           ],
         },
         {
-          test: /\.s(a|c)ss$/,
-          exclude: /\.module.(s(a|c)ss)$/,
-          loader: [
-            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: isDevelopment,
-              },
-            },
-          ],
-        },
-        {
-          test: /\.svg$/,
+          test: /\.(png|jpe?g|gif)$/i,
           use: 'file-loader',
         },
       ],
     },
     resolve: {
-      // We can now require('file') instead of require('file.jsx')
-      extensions: ['', '.js', '.jsx', '.scss'],
-      alias: {
-        src: path.resolve(__dirname, '../src'),
-      },
+      extensions: ['.js', '.jsx', '.scss'],
     },
     plugins: [
       // This plugin will generate an HTML5 file that imports all our Webpack

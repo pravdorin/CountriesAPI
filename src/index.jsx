@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './styles.module.scss';
+import { App } from './App';
 
-function Root() {
-  return <h1 className={styles.red}>Hello, world.</h1>;
-}
+const Index = () => (
+  <App />
+);
 
 // Render the Root element into the DOM
-ReactDOM.render(<Root />, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('root'));

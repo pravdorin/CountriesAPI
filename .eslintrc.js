@@ -16,7 +16,9 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: {},
+  rules: {
+    'import/prefer-default-export': 0,
+  },
   settings: {
     'import/resolver': {
       node: {
