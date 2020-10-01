@@ -67,7 +67,7 @@ module.exports = (env) => {
                 ],
                 '@babel/preset-react',
               ],
-              plugins: ['react-css-modules'],
+              plugins: ['babel-plugin-styled-components'],
             },
           },
         },
@@ -83,16 +83,13 @@ module.exports = (env) => {
           ],
         },
         {
-          test: /\.scss$/,
+          test: /\.s[ac]ss$/i,
           use: [
-            { loader: 'style-loader' },
+            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
-                modules: {
-                  localIdentName: '[local]_[hash:base64:5]',
-                },
               },
             },
             {
@@ -125,8 +122,8 @@ module.exports = (env) => {
         template: path.join(PATH_SOURCE, './index.html'),
       }),
       new MiniCssExtractPlugin({
-        filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-        chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
+        filename: '[name].css',
+        chunkFilename: '[id].css',
       }),
     ],
   };

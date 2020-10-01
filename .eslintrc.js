@@ -18,6 +18,9 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'import/prefer-default-export': 0,
+    'space-infix-ops': 0,
+    'react/prop-types': 0,
+    'arrow-body-style': 0,
   },
   settings: {
     'import/resolver': {
