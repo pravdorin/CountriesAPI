@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { themeReducer } from './reducers/themeReducer';
+// import { createStore } from 'redux';
+// import { Provider } from 'react-redux';
+// import { themeReducer } from './reducers/themeReducer';
 import { App } from './App';
 
-const store = createStore(themeReducer);
+// const store = createStore(themeReducer);
 
 const Index = () => {
   return (
@@ -15,8 +15,6 @@ const Index = () => {
 
 // Render the Root element into the DOM
 ReactDOM.render(
-  <Provider store={store}>
-    <Index />
-  </Provider>,
+  <Index />,
   document.getElementById('root'),
 );

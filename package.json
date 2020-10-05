@@ -58,13 +58,16 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "babel-plugin-react-css-modules": "^5.2.6",
     "core-js": "^3.6.5",
     "local-storage-fallback": "^4.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-infinite-scroll-component": "^5.1.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0"
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import LightLogo from '../assets/dark-logo.svg';
-import DarkLogo from '../assets/dark-logo.svg';
+import LightLogo from '../../assets/dark-logo.svg';
+import DarkLogo from '../../assets/light-logo.svg';
+import { useTheme, useUpdateTheme } from '../../context/ThemeContext';
 
 const SwitchThemeButton = styled.button`
   border: none;
@@ -21,21 +22,20 @@ const SwitchThemeText = styled.span`
   padding-left: 0.5em;
   color: ${(props) =>
     props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
-    }; 
 `;
 
-export const ThemeSwitcher = ({ currentTheme, setCurrentTheme, theme }) => {
+export const ThemeSwitcher = () => {
+  const theme = useTheme();
+  const setTheme = useUpdateTheme();
   return (
     <SwitchThemeButton
       type="button"
       onClick={() =>
-        setCurrentTheme(
-          currentTheme.mode === 'dark' ? { mode: 'light' } : { mode: 'dark' }
-        )
+        setTheme(theme.mode === 'dark' ? { mode: 'light' } : { mode: 'dark' })
       }
     >
       <SwitchThemeImage
-        src={currentTheme.mode === 'dark' ? DarkLogo : LightLogo}
+        src={theme.mode === 'dark' ? LightLogo : DarkLogo}
         alt="switch theme"
       />
       <SwitchThemeText>Dark Mode</SwitchThemeText>

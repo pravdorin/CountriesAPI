@@ -1,7 +1,7 @@
 // Reset styles
 
-@import "normalize.css";
-@import "sanitize.css";
+@import 'normalize.css';
+@import 'sanitize.css';
 
 // Base styles
 
@@ -14,6 +14,7 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 body {
   font-family: 'Nunito Sans', sans-serif;
+  position: relative;
 }
 
 // Dark mode colors
@@ -27,3 +28,32 @@ $lightBlack: hsl(200, 15%, 8%);
 $darkGray: hsl(0, 0%, 52%);
 $veryLightGray: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
+
+.hero {
+  position: relative;
+  display: flex;
+}
+
+.spinner {
+  display: block;
+  margin: 50vh auto;
+
+  top: 50%;
+
+  width: 100px;
+  height: 100px;
+
+  animation-name: spinning;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
