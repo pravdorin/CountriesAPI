@@ -67,7 +67,7 @@ module.exports = (env) => {
                 ],
                 '@babel/preset-react',
               ],
-              plugins: ['babel-plugin-styled-components'],
+              plugins: ['@babel/plugin-syntax-dynamic-import','babel-plugin-styled-components'],
             },
           },
         },
@@ -111,7 +111,7 @@ module.exports = (env) => {
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.scss'],
+      extensions: ['.js', '.jsx', '.scss', '.css'],
     },
     plugins: [
       // This plugin will generate an HTML5 file that imports all our Webpack

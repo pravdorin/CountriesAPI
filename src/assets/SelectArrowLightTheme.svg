@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LIGHT" transform="translate(-187.000000, -211.000000)">
+            <g id="FILTER" transform="translate(16.000000, 192.000000)">
+                <g id="Group-2" transform="translate(171.000000, 19.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="10" height="10"></rect>
+                    <g id="expand-more" transform="translate(1.250000, 3.125000)" fill="#000000">
+                        <polygon id="Shape" points="6.625 -0.25 3.75 2.625 0.875 -0.25 0 0.625 3.75 4.375 7.5 0.625"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
