@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Path</title>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="LIGHT" transform="translate(-276.000000, -34.000000)" fill="#FFFFFF" stroke="#111517">
-            <g id="Group-3" transform="translate(275.000000, 32.000000)">
-                <path d="M10.8425714,11.052 C7.73485714,11.052 5.21542857,8.7422619 5.21542857,5.89457143 C5.21542857,4.8202381 5.57342857,3.8252619 6.18514286,3 C3.75228571,3.75611905 2,5.86497619 2,8.35045238 C2,11.4707857 4.75942857,14 8.16285714,14 C10.8742857,14 13.1757143,12.3945238 14,10.163619 C13.1,10.7238333 12.0128571,11.052 10.8425714,11.052 Z" id="Path"></path>
+        <g id="DARK" transform="translate(-1252.000000, -29.000000)">
+            <g id="Group-3" transform="translate(1252.000000, 29.000000)">
+                <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+                <path d="M13.5532143,13.815 C9.66857143,13.815 6.51928571,10.9278274 6.51928571,7.36821429 C6.51928571,6.02529762 6.96678571,4.78157738 7.73142857,3.75 C4.69035714,4.69514881 2.5,7.33122024 2.5,10.4380655 C2.5,14.3384821 5.94928571,17.5 10.2035714,17.5 C13.5928571,17.5 16.4696429,15.4931548 17.5,12.7045238 C16.375,13.4047917 15.0160714,13.815 13.5532143,13.815 Z" id="Path" fill="#FFFFFF"></path>
             </g>
         </g>
     </g>

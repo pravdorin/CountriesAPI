@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App';
+import { BrowserRouter } from 'react-router-dom';
+import 'normalize.css';
 
 const Index = () => {
   return (
@@ -8,8 +10,9 @@ const Index = () => {
   );
 };
 
-// Render the Root element into the DOM
 ReactDOM.render(
-  <Index />,
-  document.getElementById('root'),
+  <BrowserRouter>
+    <Index />
+  </BrowserRouter>,
+  document.getElementById('root')
 );

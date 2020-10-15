@@ -9,7 +9,8 @@ import SelectArrowLightTheme from '../../assets/SelectArrowLightTheme.svg';
 const CustomSelect = styled(Select)`
   & .react-select__control {
     background-color: ${(props) =>
-      props.theme.mode === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'};
+  props.theme.mode === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'};
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.05);
     border: none;
     border-radius: 5px;
     padding: 10px 0px 10px 20px;

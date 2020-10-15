@@ -24,8 +24,8 @@ const Name = styled.h4`
   font-size: 18px;
   font-weight: 600;
   color: ${(props) =>
-  props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
-  margin: 0;
+    props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
+  margin: 25px 0 0 0;
   padding-bottom: 15px;
 `;
 
@@ -45,8 +45,8 @@ const Region = styled.h5`
   font-size: 14px;
   font-weight: 600;
   color: ${(props) =>
-  props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
-  padding: 8px 0;
+    props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
+  padding: 15px 0;
   margin: 0;
 `;
 
@@ -60,6 +60,7 @@ const Capital = styled.h5`
   color: ${(props) =>
     props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
   margin: 0;
+  padding-bottom: 30px;
 `;
 
 const CapitalText = styled.span`
@@ -67,21 +68,26 @@ const CapitalText = styled.span`
 `;
 
 export const CountryCard = ({ name, flag, region, capital, population }) => {
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  const pupulationWithCommas = numberWithCommas(population);
   return (
-    <Card>
-      <FlagImage src={flag} alt={name} />
-      <InfoBlock>
-        <Name>{name}</Name>
-        <Population>
-          Population: <PopulationNumber>{population}</PopulationNumber>
-        </Population>
-        <Region>
-          Region: <RegionText>{region}</RegionText>
-        </Region>
-        <Capital>
-          Capital: <CapitalText>{capital}</CapitalText>
-        </Capital>
-      </InfoBlock>
-    </Card>
+      <Card>
+        <FlagImage src={flag} alt={name} />
+        <InfoBlock>
+          <Name>{name}</Name>
+          <Population>
+            Population: <PopulationNumber>{pupulationWithCommas}</PopulationNumber>
+          </Population>
+          <Region>
+            Region: <RegionText>{region}</RegionText>
+          </Region>
+          <Capital>
+            Capital: <CapitalText>{capital}</CapitalText>
+          </Capital>
+        </InfoBlock>
+      </Card>
   );
 };

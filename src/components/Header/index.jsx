@@ -14,6 +14,10 @@ const HeaderFlex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: 1024px) {
+    padding: 0 80px;
+  }
 `;
 
 export const Header = () => {
