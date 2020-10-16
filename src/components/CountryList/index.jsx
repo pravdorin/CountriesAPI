@@ -26,6 +26,8 @@ const CountryGrid = styled.div`
 
   @media (min-width: 1024px) {
     grid-gap: 75px;
+    grid-template-columns: repeat(auto-fit, minmax(264px, 264px));
+    justify-content: center;
   }
 `;
 
@@ -92,26 +94,26 @@ const CountryList = () => {
     if (region !== null) {
       const regionLabel = region.label;
       if (regionLabel === 'All') {
-        const foundedCountries = allCountries.filter((country) => {
-          return country.name.toLowerCase().includes(searchTherm.toLowerCase());
-        });
+        const foundedCountries = filterCountries(allCountries)
         setCountries(foundedCountries);
       } else {
         const filteredCountries = allCountries.filter((country) => {
           return country.region === regionLabel;
         });
-        const foundedCountries = filteredCountries.filter((country) => {
-          return country.name.toLowerCase().includes(searchTherm.toLowerCase());
-        });
+        const foundedCountries = filterCountries(filteredCountries);
         setCountries(foundedCountries);
       }
     } else {
-      const foundedCountries = allCountries.filter((country) => {
-        return country.name.toLowerCase().includes(searchTherm.toLowerCase());
-      });
+      const foundedCountries = filterCountries(allCountries);
       setCountries(foundedCountries);
     }
   }, [searchTherm]);
+
+  function filterCountries(countryList) {
+    return countryList.filter((country) => {
+          return country.name.toLowerCase().includes(searchTherm.toLowerCase());
+    });
+  }
 
   function getContryList(list) {
     return list.map((country) => {

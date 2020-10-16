@@ -3,6 +3,7 @@ import React from 'react';
 
 const Card = styled.div`
   max-width: 100%;
+  min-height: 365px;
   background-color: ${(props) =>
     props.theme.mode === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'};
   box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
@@ -25,7 +26,7 @@ const Name = styled.h4`
   font-weight: 600;
   color: ${(props) =>
     props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
-  margin: 25px 0 0 0;
+  margin: 20px 0 0 0;
   padding-bottom: 15px;
 `;
 
@@ -60,7 +61,6 @@ const Capital = styled.h5`
   color: ${(props) =>
     props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
   margin: 0;
-  padding-bottom: 30px;
 `;
 
 const CapitalText = styled.span`

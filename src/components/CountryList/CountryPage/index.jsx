@@ -11,6 +11,7 @@ const CountryPageBlock = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding: 20px 40px;
   }
 `;
 
@@ -51,8 +52,8 @@ const FlagBlock = styled.div`
   @media (min-width: 1024px) {
     display: flex;
     flex-direction: column;
-    width: auto;
-    padding: 40px 10%;  
+    width: 100%;
+    padding: 40px 5%;  
   }
 `;
 
@@ -77,8 +78,14 @@ const InfoBlock = styled.div`
   flex-direction: column;
   padding-left: 30px;
 
+  @media (min-width: 480px) {
+    align-items: center;
+  }
+
   @media (min-width: 768px) {
     padding: 0 20px;
+    width: 100%;
+    align-items: stretch;
   }
 `;
 
@@ -111,10 +118,22 @@ const CountryName = styled.h5`
   }
 `;
 
+const AllList = styled.div`
+  @media (min-width: 1024px) {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  }
+`;
+
 const MainInfoList = styled.ul`
   margin: 0;
-  padding: 0;
+  padding: 0 50px 0 0;
   list-style: none;
+
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const MainInfoItem = styled.li`
@@ -183,7 +202,8 @@ const BorderItem = styled.li`
   background-color: ${(props) =>
     props.theme.mode === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'};
   color: ${(props) =>
-    props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
+  props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.29);
   border-radius: 2px;
   padding: 5px 30px;
   margin-right: 10px;
@@ -196,6 +216,7 @@ const BorderLink = styled(Link)`
     props.theme.mode === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'};
   text-decoration: none;
 `;
+
 
 export const CountryPage = ({ match }) => {
   const [country, setCountry] = useState([]);
@@ -260,7 +281,8 @@ export const CountryPage = ({ match }) => {
           </FlagBlock>
           <InfoBlock>
               <CountryName>{country.name}</CountryName>
-            <ListBlock>
+                <ListBlock>
+            <AllList>
             <MainInfoList>
               <MainInfoItem>
                 Native Name:{' '}
@@ -312,7 +334,9 @@ export const CountryPage = ({ match }) => {
                     </AdditionalInfoItemData>
                   ))}
               </AdditionalInfoItem>
-                </AdditionalInfoList>
+                    </AdditionalInfoList>
+                  
+            </AllList>
             <BorderBlock>
             <BorderCountries>Border Countries:</BorderCountries>
               <BorderList>
